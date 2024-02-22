@@ -42,6 +42,30 @@ boutonSeries.onclick = function () {
   boutonSeries.style.color = "white";
 };
 
+// Fonction qui affiche la liste des genres en faisant une requête ajax
+function afficherGenres(event) {
+  const req = new XMLHttpRequest();
+  req.open("GET", "traitement_genres.php");
+
+  req.onreadystatechange = () => {
+    // In local files, status is 0 upon success in Mozilla Firefox
+    if (req.readyState === XMLHttpRequest.DONE) {
+      const status = req.status;
+      if (status === 0 || (status >= 200 && status < 400)) {
+        // On interprète le JSON reçu
+        const response = JSON.parse(req.responseText);
+
+        // On ajoute chaque genre au formulaire
+        response.forEach(genre => {
+          
+        });
+      }
+    }
+  };
+
+  req.send();
+}
+
 // Fonction qui met à jour les films et séries en faisant une requête ajax
 function afficherFilms(event) {
   const req = new XMLHttpRequest();
@@ -92,8 +116,5 @@ function afficherFilms(event) {
   req.send();
 }
 
+afficherGenres();
 afficherFilms();
-
-
-
-

@@ -61,6 +61,7 @@ try {
 		<li><a href="accueil.php"> Accueil </a></li>
 		<li><a id="boutonFilms" href="#"> Films </a></li>
 		<li><a id="boutonSeries" href="#"> Séries </a></li>
+		<li><a id="boutonGenres" href="#"> Genres </a></li>
 	</ul>
 </header>
 
