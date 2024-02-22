@@ -1,0 +1,172 @@
+body {
+    background: #141414;
+    background-size: cover;
+    margin: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+}
+
+/*header*/
+header {
+    display: flex;
+}
+
+header>ul {
+    font-size: 20px;
+    display: flex;
+}
+
+header>ul>li {
+    list-style-type: none;
+}
+
+header>ul>li>a {
+    margin-left: 30px;
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #757575;
+    display: block;
+}
+
+#logo {
+    width: 300px;
+}
+
+/* Burger menu */
+.burger {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: -250px;
+    background-color: black;
+    padding-top: 60px;
+    transition: left 0.5s ease;
+}
+
+/* Lien dans le burger */
+.burger a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+
+
+.burger a:hover {
+    color: #570ad3;
+}
+
+.burger ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/*Passe de  -250 à 0 pour afficher*/
+.burger.active {
+    left: 0;
+}
+
+/* Ferme burger */
+.burger .ferme {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+/* Logo burger */
+.logoBurger span {
+    display: block;
+    width: 45px;
+    height: 7px;
+    background-color: rgb(255, 255, 255);
+    margin: 6px;
+}
+
+#ouvreB {
+    margin-top: 28px;
+    margin-left: 20px;
+}
+
+/* Bouton de déconnecion*/
+.boutonDeconnexion {
+    background-color: black;
+    color: #818181;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+.boutonDeconnexion:hover {
+    color: #570ad3;
+}
+
+
+/* Style du bouton texte au survol */
+.a:hover {
+    color: #570ad3;
+}
+
+
+
+
+
+
+
+
+.mail {
+    color: white;
+    font-size: 25px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s;
+}
+
+.lesimages {
+    display: flex;
+}
+
+.titre {
+    color: white;
+    padding: 50px;
+}
+
+.detail {
+    color: white;
+    display: none;
+    text-align: center;
+    padding: 50px;
+    margin-left: 100px;
+}
+
+.image {
+    width: 238px;
+    height: 333px;
+    padding: 50px;
+    margin-left: 200px;
+}
+
+.bouton {
+    width: 38px;
+    height: 33px;
+    border-radius: 10px;
+    cursor: pointer;
+}
