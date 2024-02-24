@@ -61,7 +61,15 @@ try {
 		<li><a href="accueil.php"> Accueil </a></li>
 		<li><a id="boutonFilms" href="#"> Films </a></li>
 		<li><a id="boutonSeries" href="#"> Séries </a></li>
-		<li><a id="boutonGenres" href="#"> Genres </a></li>
+		<li><a id="boutonGenres" href="#">
+				<div id="listeGenres" class="dropdown-check-list" tabindex="100">
+					<span class="anchor">Genres</span>
+					<ul class="items">
+						<li><input type="checkbox" />Action </li>
+						<li><input type="checkbox" />Aventure</li>
+					</ul>
+				</div>
+			</a></li>
 	</ul>
 </header>
 
