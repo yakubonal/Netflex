@@ -42,10 +42,21 @@ boutonSeries.onclick = function () {
   boutonSeries.style.color = "white";
 };
 
+// Gestion du menu déroulant des genres
+var checkList = document.getElementById('selecteurGenres');
+checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+  if (checkList.classList.contains('visible'))
+    checkList.classList.remove('visible');
+  else
+    checkList.classList.add('visible');
+}
+
 // Fonction qui affiche la liste des genres en faisant une requête ajax
 function afficherGenres(event) {
+  var listeGenres = document.getElementById('listeGenres');
+
   const req = new XMLHttpRequest();
-  req.open("GET", "traitement_genres.php");
+  req.open("GET", "traitement_genre.php");
 
   req.onreadystatechange = () => {
     // In local files, status is 0 upon success in Mozilla Firefox
@@ -57,7 +68,7 @@ function afficherGenres(event) {
 
         // On ajoute chaque genre au formulaire
         response.forEach(genre => {
-          
+          listeGenres.innerHTML += `<li><input type="checkbox" />${genre.genre} </li>`
         });
       }
     }
@@ -118,11 +129,3 @@ function afficherFilms(event) {
 
 afficherGenres();
 afficherFilms();
-
-var checkList = document.getElementById('listeGenres');
-checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
-  if (checkList.classList.contains('visible'))
-    checkList.classList.remove('visible');
-  else
-    checkList.classList.add('visible');
-}
