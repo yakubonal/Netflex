@@ -68,7 +68,26 @@ function afficherGenres(event) {
 
         // On ajoute chaque genre au formulaire
         response.forEach(genre => {
-          listeGenres.innerHTML += `<li><input type="checkbox" />${genre.genre} </li>`
+          // On créé un élément "input"
+          var inputGenre = document.createElement("input");
+          inputGenre.id = `genre${genre.id}`;
+          inputGenre.type = "checkbox";
+          inputGenre.value = genre.id;
+
+          // On créé un élément "li"
+          var li = document.createElement("li");
+
+          // On définit la fonction à exécuter lors du clic sur le texte / checkbox
+          li.onclick = () => {
+            inputGenre.checked = !inputGenre.checked;
+          };
+
+          // On ajoute les éléments au HTML
+          li.appendChild(inputGenre);
+          listeGenres.appendChild(li);
+
+          // On ajoute le texte ("Action", "Aventure", etc.)
+          li.appendChild(document.createTextNode(genre.genre));
         });
       }
     }
