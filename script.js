@@ -35,11 +35,15 @@ let boutonFilms = document.getElementById("boutonFilms");
 boutonFilms.onclick = function () {
   boutonFilms.style.color = "white";
   boutonSeries.style.color = "#757575";
+
+  afficherFilms();
 };
 // Change la couleur du texte quand on clique dessus
 boutonSeries.onclick = function () {
   boutonFilms.style.color = "#757575";
   boutonSeries.style.color = "white";
+
+  afficherFilms();
 };
 
 // Gestion du menu déroulant des genres
@@ -52,7 +56,7 @@ checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
 }
 
 // Fonction qui affiche la liste des genres en faisant une requête ajax
-function afficherGenres(event) {
+function afficherGenres() {
   var listeGenres = document.getElementById('listeGenres');
 
   const req = new XMLHttpRequest();
@@ -70,7 +74,7 @@ function afficherGenres(event) {
         response.forEach(genre => {
           // On créé un élément "input"
           var inputGenre = document.createElement("input");
-          inputGenre.id = `genre${genre.id}`;
+          inputGenre.classList.add("selecteurGenre");
           inputGenre.type = "checkbox";
           inputGenre.value = genre.id;
 
@@ -80,6 +84,7 @@ function afficherGenres(event) {
           // On définit la fonction à exécuter lors du clic sur le texte / checkbox
           li.onclick = () => {
             inputGenre.checked = !inputGenre.checked;
+            afficherFilms();
           };
 
           // On ajoute les éléments au HTML
@@ -97,12 +102,28 @@ function afficherGenres(event) {
 }
 
 // Fonction qui met à jour les films et séries en faisant une requête ajax
-function afficherFilms(event) {
+function afficherFilms() {
+  // On vérifie si des cases de sélection de genre ont été cochées
+  var listeGenres = [];
+  var selecteursGenre = document.getElementsByClassName("selecteurGenre");
+  for (let selecteur of selecteursGenre) {
+    if (selecteur.checked) {
+      listeGenres.push(parseInt(selecteur.value));
+    }
+  }
+  // Si aucune case n'a été cochée, on ne trie pas par genre (donc on ajoute tous les genres au tableau)
+  if (listeGenres.length === 0) {
+    for (let selecteur of selecteursGenre) {
+      listeGenres.push(parseInt(selecteur.value));
+    }
+  }
+
+  // TODO On vérifie si "Films" ou "Séries" a été sélectionné
+
   const req = new XMLHttpRequest();
   req.open("GET", "traitement_netflex.php");
 
   req.onreadystatechange = () => {
-    // In local files, status is 0 upon success in Mozilla Firefox
     if (req.readyState === XMLHttpRequest.DONE) {
       const status = req.status;
       if (status === 0 || (status >= 200 && status < 400)) {
@@ -132,15 +153,13 @@ function afficherFilms(event) {
           image[i].addEventListener("click", afficheDetail);
           image[i].myParam = image[i].id;
         }
-      } else {
-        // Oh no! There has been an error with the request!
       }
     }
   };
 
   // var data = new FormData();
   // data.append('type', document.getElementById("type").value); // Série / Film
-  // data.append('genre', document.getElementById("genre").value);
+  // data.append('genres', document.getElementById("genres").value);
   // console.log(data);
   // req.send(data);
   req.send();
