@@ -29,6 +29,8 @@
 	}
 	?>
 
+	
+
 	<div class="questions">
 		<h2>Foire aux questions</h2>
 
