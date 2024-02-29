@@ -67,7 +67,8 @@ try {
 					<ul id="listeGenres" class="items">
 					</ul>
 				</div>
-			</a></li>
+			</a>
+		</li>
 	</ul>
 </header>
 

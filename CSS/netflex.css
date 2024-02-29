@@ -120,6 +120,9 @@ header>ul>li>a {
     color: #570ad3;
 }
 
+
+
+
 /* Style du bouton texte au survol */
 .a:hover {
     color: #570ad3;
@@ -136,25 +139,28 @@ header>ul>li>a {
 
 .lesimages {
     display: flex;
+    margin-top: 100px;
 }
 
 .titre {
-    color: white;
-    padding: 50px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    font-size: x-large;
+
 }
 
 .detail {
     color: white;
     display: none;
     text-align: center;
-    padding: 50px;
+    padding: 10px;
     margin-left: 100px;
 }
 
 .image {
     width: 238px;
     height: 333px;
-    padding: 50px;
+    padding: 10px;
     margin-left: 200px;
 }
 
@@ -165,20 +171,44 @@ header>ul>li>a {
     cursor: pointer;
 }
 
+
+/* Menu deroulant pour le genre */
 .dropdown-check-list {
     display: inline-block;
+    position: relative;
+}
+
+.dropdown-check-list button {
+    background-color: #b20f0f;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .dropdown-check-list ul.items {
-    padding: 2px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 10px;
     display: none;
     margin: 0;
-    background-color: #570ad3;
-    border-top: none;
+    background-color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: 250px;
+    width: 200px;
 }
 
 .dropdown-check-list ul.items li {
     list-style: none;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown-check-list ul.items li:hover {
+    background-color: #555;
 }
 
 .dropdown-check-list.visible .items {

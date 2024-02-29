@@ -28,6 +28,10 @@ FROM
     video
 JOIN realise ON realise.fkVideo = video.idVideo
 JOIN realisateur ON realise.fkRealisateur = realisateur.idRealisateur
+JOIN produit ON produit.fkVideo = video.idVideo
+JOIN producteur ON produit.fkProducteur = producteur.idProducteur
+JOIN joue ON joue.fkVideo = video.idVideo
+JOIN acteur ON joue.fkActeur = acteur.idActeur
 JOIN appartient ON video.idVideo = appartient.fkVideo
 JOIN genre ON genre.idGenre = appartient.fkGenre
 JOIN `type` ON `type`.idType = video.fkType

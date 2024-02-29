@@ -52,7 +52,7 @@ boutonSeries.onclick = function () {
 
 // Gestion du menu déroulant des genres
 var checkList = document.getElementById('selecteurGenres');
-checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
   if (checkList.classList.contains('visible'))
     checkList.classList.remove('visible');
   else
@@ -155,7 +155,7 @@ function afficherFilms() {
           document.getElementById("videos").innerHTML += `
             <div class='lesimages'>
               <img class='image' id='image${film.idVideo}' src='./images/${film.image}'>
-              <a class='titre'><br>${film.titre}<br>${film.dateSortie}<br>${film.duree}</a>
+              <a class='titre'><br>Titre : ${film.titre}<br>Date : ${film.dateSortie}<br>Durée : ${film.duree}<br>Réalisateur : ${film.nom} ${film.prenom}</a>
               <img class='bouton' id='bouton${film.idVideo}' src='./images/bouton.jpg'>
               <div class='detail'>
                 Réalisateur : ${film.nom}<br>${film.prenom}
