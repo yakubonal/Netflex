@@ -28,6 +28,6 @@ JOIN appartient ON video.idVideo = appartient.fkVideo
 JOIN genre ON genre.idGenre = appartient.fkGenre
 JOIN `type` ON `type`.idType = video.fkType
 WHERE
-    genre.idGenre IN(1, 4)
+    genre.idGenre IN(1, 4) AND `type`.nom LIKE "Film"
 GROUP BY
     video.idVideo

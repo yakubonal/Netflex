@@ -98,6 +98,9 @@ function afficherGenres() {
           // On ajoute le texte ("Action", "Aventure", etc.)
           li.appendChild(document.createTextNode(genre.genre));
         });
+
+        // Premier affichage des films
+        afficherFilms();
       }
     }
   };
@@ -171,13 +174,7 @@ function afficherFilms() {
     }
   };
 
-  // var data = new FormData();
-  // data.append('type', document.getElementById("type").value); // Série / Film
-  // data.append('genres', document.getElementById("genres").value);
-  // console.log(data);
-  // req.send(data);
   req.send();
 }
 
 afficherGenres();
-afficherFilms();
