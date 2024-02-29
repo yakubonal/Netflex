@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Crée un compte</title>
-	<link rel="stylesheet" href="connex.css">
+	<link rel="stylesheet" href="CSS/connex.css">
 </head>
 <header>
 	<img id='logo' src="images/logo.png">

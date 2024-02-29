@@ -14,7 +14,7 @@ html {
 }
 
 body {
-	background-image: url(images/fond.jpg);
+	background-image: url(../images/fond.jpg);
 	backdrop-filter: brightness(60%);
 	background-size: cover;
 	margin: 0%;

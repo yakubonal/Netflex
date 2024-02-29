@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Inscription</title>
-	<link rel="stylesheet" href="inscr.css">
+	<link rel="stylesheet" href="CSS/inscr.css">
 </head>
 <header>
 	<img id='logo' src="images/logo.png">
