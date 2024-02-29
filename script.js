@@ -35,6 +35,8 @@ let boutonFilms = document.getElementById("boutonFilms");
 boutonFilms.onclick = function () {
   boutonFilms.style.color = "white";
   boutonSeries.style.color = "#757575";
+  boutonFilms.classList.add("active");
+  boutonSeries.classList.remove("active");
 
   afficherFilms();
 };
@@ -42,6 +44,8 @@ boutonFilms.onclick = function () {
 boutonSeries.onclick = function () {
   boutonFilms.style.color = "#757575";
   boutonSeries.style.color = "white";
+  boutonSeries.classList.add("active");
+  boutonFilms.classList.remove("active");
 
   afficherFilms();
 };
@@ -118,10 +122,20 @@ function afficherFilms() {
     }
   }
 
-  // TODO On vérifie si "Films" ou "Séries" a été sélectionné
+  // On vérifie si "Films" ou "Séries" a été sélectionné
+  let boutonSeries = document.getElementById("boutonSeries");
+  let boutonFilms = document.getElementById("boutonFilms");
+
+  var filtreType = "tous";
+  if (boutonSeries.classList.contains("active")) {
+    filtreType = "series";
+  }
+  else if (boutonFilms.classList.contains("active")) {
+    filtreType = "films";
+  }
 
   const req = new XMLHttpRequest();
-  req.open("GET", "traitement_netflex.php");
+  req.open("GET", "traitement_netflex.php?type=" + filtreType + "&genres=" + JSON.stringify(listeGenres));
 
   req.onreadystatechange = () => {
     if (req.readyState === XMLHttpRequest.DONE) {
