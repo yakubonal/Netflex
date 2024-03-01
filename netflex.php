@@ -89,7 +89,7 @@ try {
 		}
 		?>
 	</main>
-	<script src="script.js"></script>
+	<script src="JS/api_netflex.js"></script>
 </body>
 
 </html>

@@ -81,7 +81,7 @@
 			<a id="footerCadre" href="connexion.php">J'ai déjà un compte</a>
 		</div>
 	</div>
-	<script src="api.js"></script>
+	<script src="JS/api_inscription.js"></script>
 </body>
 
 </html>
