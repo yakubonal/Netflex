@@ -28,12 +28,30 @@
 		exit();
 	}
 	?>
+	<h1>Plongez dans l'univers captivant de Netflex, où chaque instant compte.</h1>
 
-	
+	<div class="lesParties">
+		<div class="partie1">
+			<img id='imgPartie' src="images/partie1.png">
+			<a>Bienvenue sur Netflex : Explorez notre vaste bibliothèque de films, séries et documentaires
+				soigneusement sélectionnés pour votre plaisir de visionnage.
+			</a>
+		</div>
 
+		<div class="partie2">
+			<img id='imgPartie' src="images/partie3.png">
+			<a>Accès Multiplateforme : Regardez où vous voulez, quand vous voulez. Netflex est disponible
+				sur tous vos appareils, du grand écran à votre smartphone.
+			</a>
+		</div>
+	</div>
+
+
+
+
+
+	<h3>Foire aux questions</h3>
 	<div class="questions">
-		<h2>Foire aux questions</h2>
-
 		<!-- Création de plusieurs boutons (questions) -->
 		<button class="question" onclick="toggleAnswer(1)">Comment puis-je m'abonner au service de streaming ?</button>
 		<div class="reponse" id="reponse1">Pour vous abonner, cliquez sur le bouton "S'abonner" en haut de la page

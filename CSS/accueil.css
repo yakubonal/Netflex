@@ -22,7 +22,7 @@ header {
 
 .lesboutons {
     margin-top: 30px;
-    margin-left: 950px;
+    margin-left: 900px;
 }
 
 #bouton {
@@ -51,12 +51,46 @@ header {
 }
 
 
+/* Titre de la page */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 75px;
+    margin: 150px 30px 300px 30px;
+}
 
 
+/* Les parties d'information */
+#imgPartie {
+    height: 450px;
+    width: 450px;
+    border-radius: 30px;
+    margin-left: 150px;
+    margin-bottom: 150px;
+}
+
+.lesParties {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+}
+
+.partie1 {
+    display: flex;
+}
+
+.partie2 {
+    display: flex;
+}
+
+a {
+    margin: 150px 30px 0px 30px;
+}
 
 
 /* Foire au questions */
-.questions>h2 {
+h3 {
     text-align: center;
     color: white;
     font-size: 35px;
@@ -96,4 +130,9 @@ header {
 
 .question.active:hover {
     background-color: rgb(45, 45, 45);
+}
+
+
+footer {
+    padding: 100px;
 }
