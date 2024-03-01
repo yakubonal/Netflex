@@ -39,7 +39,7 @@
 		</div>
 
 		<div class="partie2">
-			<img id='imgPartie' src="images/partie3.png">
+			<img id='imgPartie' src="images/partie2.png">
 			<a>Accès Multiplateforme : Regardez où vous voulez, quand vous voulez. Netflex est disponible
 				sur tous vos appareils, du grand écran à votre smartphone.
 			</a>
