@@ -93,4 +93,8 @@
 	<script src="JS/accueil.js"></script>
 </body>
 
+<footer>
+
+</footer>
+
 </html>
