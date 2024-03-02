@@ -37,8 +37,6 @@ function inscription(event) {
                     document.getElementById("erreurJaccepte").innerHTML = " * Vous devez accepter les conditions ";
                 }
                 else if (req.responseText == "ok") {
-                    session_start();
-                    $_SESSION["mail"] = $mail;
                     window.location.href = "netflex.php";
                 }
             } else {

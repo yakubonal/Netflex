@@ -106,9 +106,9 @@ $req->bindParam("mail", $mail, PDO::PARAM_STR);
 $req->bindParam("genre", $genre, PDO::PARAM_STR);
 
 $req->execute();
-echo "ok";
 session_start();
 $_SESSION["mail"] = $mail;
+echo "ok";
 die();
 
 
