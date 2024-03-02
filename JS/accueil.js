@@ -3,7 +3,7 @@ function toggleAnswer(questionNumber) {
 
     // Masquer toutes les réponses sauf celle de la question cliquée
     var toutesLesReponses = document.querySelectorAll('.reponse');
-    toutesLesReponses.forEach(function(element) {
+    toutesLesReponses.forEach(function (element) {
         if (element !== reponse) {
             element.style.display = 'none';
         }
@@ -14,7 +14,7 @@ function toggleAnswer(questionNumber) {
 
     // Ajouter/retirer la classe "active" pour mettre en évidence la question sélectionnée
     var toutesLesQuestions = document.querySelectorAll('.question');
-    toutesLesQuestions.forEach(function(element) {
+    toutesLesQuestions.forEach(function (element) {
         element.classList.remove('active');
     });
 
