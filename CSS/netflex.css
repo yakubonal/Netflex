@@ -64,7 +64,7 @@ header>ul>li>a {
 
 /* Styles pour les liens dans le menu burger */
 .burger a {
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 0px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
@@ -109,7 +109,7 @@ header>ul>li>a {
 .boutonDeconnexion {
     background-color: black;
     color: #818181;
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 0px;
     text-decoration: none;
     font-size: 25px;
     cursor: pointer;
@@ -132,7 +132,7 @@ header>ul>li>a {
 .mail {
     color: white;
     font-size: 25px;
-    padding: 8px 8px 8px 32px;
+    padding: 8px 8px 8px 0px;
     text-decoration: none;
     display: block;
     transition: 0.3s;
