@@ -5,11 +5,13 @@ function inscription(event) {
     // On empêche la redirection vers la page de traitement
     event.preventDefault();
 
+    // Création d'une nouvelle requête XMLHttpRequest
     const req = new XMLHttpRequest();
     req.open("POST", "traitement_inscription.php");
 
+    // Gestionnaire d'événements pour le changement d'état de la requête
     req.onreadystatechange = () => {
-        // In local files, status is 0 upon success in Mozilla Firefox
+        // Traitement des réponses du serveur en fonction des cas
         if (req.readyState === XMLHttpRequest.DONE) {
             const status = req.status;
             console.log("requete ok");
@@ -37,14 +39,16 @@ function inscription(event) {
                     document.getElementById("erreurJaccepte").innerHTML = " * Vous devez accepter les conditions ";
                 }
                 else if (req.responseText == "ok") {
+                    // Redirection vers la page "netflex.php" en cas de succès
                     window.location.href = "netflex.php";
                 }
             } else {
-                // Oh no! There has been an error with the request!
+                // Oh non ! Il y a eu une erreur avec la requête !
             }
         }
     };
 
+    // Création d'un objet FormData pour envoyer les données du formulaire
     var data = new FormData();
     data.append('genre', document.getElementById("genre").value);
     data.append('identifiant', document.getElementById("identifiant").value);
@@ -55,5 +59,7 @@ function inscription(event) {
     // Si la case est cochée, on envoie 1, sinon 0
     data.append('Jaccepte', document.getElementById("Jaccepte").checked ? "1" : "0");
     console.log(data);
+
+    // Envoi de la requête avec les données du formulaire
     req.send(data);
 }
