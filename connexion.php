@@ -28,7 +28,7 @@
 					<!-- Champ pour l'adresse e-mail -->
 					<input placeholder="Mail" type="text" name="mail" id="mail" required>
 
-					Vérifie s'il y a une erreur liée à une adresse e-mail incorrecte
+					
 					<?php
 					// Vérifie s'il y a une erreur liée à une adresse e-mail incorrecte
 					if (isset($_GET["erreur"]) && ($_GET["erreur"] == "invMail")) {
