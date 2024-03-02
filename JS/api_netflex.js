@@ -160,7 +160,7 @@ function afficherFilms() {
                 <div class='bouton'>
                   <img class='bouton clicBouton' id='bouton${film.idVideo}' src='./images/bouton.jpg'>
                   <div class='detail'>
-                    Résumé : ${film.nom}<br>${film.prenom}
+                    Résumé : ${film.resume}
                   </div>
                 </div>
               </div>

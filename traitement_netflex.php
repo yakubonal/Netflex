@@ -22,6 +22,7 @@ $sql = "SELECT
     video.`image`,
     realisateur.nom,
     realisateur.prenom,
+    `resume`,
     `type`.nom AS `type`,
     GROUP_CONCAT(genre.libelle) AS genres
 FROM
