@@ -1,49 +1,55 @@
+/* Styles pour le corps de la page */
 body {
     background: #141414;
+    /* Fond noir */
     background-size: cover;
+    /* Ajustement de la taille de l'arrière-plan */
     margin: 0%;
     width: 100%;
     height: 100%;
 }
 
+/* Styles pour l'élément HTML */
 html {
     width: 100%;
     height: 100%;
     font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
 }
 
-/*header*/
+/* Styles pour l'en-tête (header) */
 header {
     display: flex;
     height: 100px;
 }
 
+/* Styles pour la liste dans l'en-tête */
 header>ul {
     font-size: 20px;
     display: flex;
 }
 
+/* Styles pour chaque élément de la liste dans l'en-tête */
 header>ul>li {
     list-style-type: none;
 }
 
+/* Styles pour les liens dans l'en-tête */
 header>ul>li>a {
     margin-left: 30px;
     padding: 8px 50px 8px 8px;
     text-decoration: none;
     font-size: 33px;
     color: #757575;
+    /* Gris clair */
     display: block;
 }
 
+/* Styles pour le logo */
 #logo {
     width: 300px;
 }
 
-
-
-
-/* Burger menu */
+/* Styles pour le menu burger */
 .burger {
     height: 100%;
     width: 250px;
@@ -56,32 +62,28 @@ header>ul>li>a {
     transition: left 0.5s ease;
 }
 
-/* Lien dans le burger */
+/* Styles pour les liens dans le menu burger */
 .burger a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: #818181;
+    /* Gris foncé */
     display: block;
     transition: 0.3s;
 }
 
 .burger a:hover {
     color: #570ad3;
+    /* Violet */
 }
 
-.burger ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-/*Passe de  -250 à 0 pour afficher*/
+/* Styles pour le menu burger actif */
 .burger.active {
     left: 0;
 }
 
-/* Ferme burger */
+/* Styles pour le bouton de fermeture du menu burger */
 .burger .ferme {
     position: absolute;
     top: 0;
@@ -89,7 +91,7 @@ header>ul>li>a {
     font-size: 36px;
 }
 
-/* Logo burger */
+/* Styles pour le logo du menu burger */
 .logoBurger span {
     display: block;
     width: 45px;
@@ -103,32 +105,30 @@ header>ul>li>a {
     margin-left: 20px;
 }
 
-/* Bouton de déconnecion*/
+/* Styles pour le bouton de déconnexion */
 .boutonDeconnexion {
     background-color: black;
     color: #818181;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
-    display: block;
+    cursor: pointer;
     transition: 0.3s;
     border: none;
-    cursor: pointer;
 }
 
 .boutonDeconnexion:hover {
     color: #570ad3;
+    /* Violet */
 }
 
-
-
-
-/* Style du bouton texte au survol */
+/* Styles pour le lien au survol */
 .a:hover {
     color: #570ad3;
+    /* Violet */
 }
 
+/* Styles pour l'adresse e-mail */
 .mail {
     color: white;
     font-size: 25px;
@@ -138,33 +138,38 @@ header>ul>li>a {
     transition: 0.3s;
 }
 
+/* Styles pour les images et leur cadre */
 .lesimages {
     display: flex;
     margin-top: 100px;
 }
-.cadre{
+
+.cadre {
     border: 10px solid;
     border-style: double;
     border-radius: 30px;
     border-color: #570ad3;
+    /* Violet */
     width: 700px;
     margin-left: 30px;
     display: inline-flex;
 }
 
+/* Styles pour les titres */
 .titre {
     color: rgb(255, 255, 255);
     font-weight: bolder;
     font-size: x-large;
-
 }
 
+/* Styles pour les détails (initialement cachés) */
 .detail {
     color: rgb(255, 255, 255);
     display: none;
     width: 400px;
 }
 
+/* Styles pour les images */
 .image {
     width: 238px;
     height: 333px;
@@ -173,6 +178,7 @@ header>ul>li>a {
     margin-bottom: 10px;
 }
 
+/* Styles pour les boutons dans le cadre */
 .bouton {
     width: 38px;
     height: 33px;
@@ -181,10 +187,7 @@ header>ul>li>a {
     margin-top: 5px;
 }
 
-
-
-
-/* Menu deroulant pour le genre */
+/* Styles pour le menu déroulant des genres */
 .dropdown-check-list {
     display: inline-block;
     position: relative;
@@ -192,6 +195,7 @@ header>ul>li>a {
 
 .dropdown-check-list button {
     background-color: #b20f0f;
+    /* Rouge foncé */
     color: white;
     border: none;
     padding: 10px;
@@ -206,6 +210,7 @@ header>ul>li>a {
     display: none;
     margin: 0;
     background-color: #333;
+    /* Gris foncé */
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     height: 300px;
@@ -221,6 +226,7 @@ header>ul>li>a {
 
 .dropdown-check-list ul.items li:hover {
     background-color: #555;
+    /* Gris plus foncé */
 }
 
 .dropdown-check-list.visible .items {
