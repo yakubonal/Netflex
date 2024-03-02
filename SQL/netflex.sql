@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 22 fév. 2024 à 23:42
+-- Généré le : sam. 02 mars 2024 à 19:39
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.0.30
 
@@ -76,7 +76,9 @@ INSERT INTO `acteur` (`idActeur`, `nom`, `prenom`, `dateNaissance`, `dateMort`) 
 (34, 'JUPE', 'Noah', '2005-02-25', NULL),
 (35, 'STATHAM', 'Jason', '1967-07-26', NULL),
 (36, 'EASTWOOD', 'Scott', '1986-03-21', NULL),
-(37, 'ALGAR', 'Niamh', '1992-06-28', NULL);
+(37, 'ALGAR', 'Niamh', '1992-06-28', NULL),
+(38, 'GUSTIN', 'Grant', '1990-01-14', NULL),
+(39, 'AMELL', 'Stephen', '1981-05-08', NULL);
 
 -- --------------------------------------------------------
 
@@ -109,7 +111,27 @@ INSERT INTO `appartient` (`fkVideo`, `fkGenre`) VALUES
 (9, 5),
 (10, 5),
 (11, 5),
-(12, 1);
+(12, 1),
+(13, 1),
+(13, 3),
+(13, 4),
+(14, 1),
+(14, 3),
+(14, 4),
+(15, 1),
+(15, 5),
+(16, 1),
+(16, 3),
+(16, 5),
+(17, 1),
+(17, 3),
+(18, 1),
+(18, 2),
+(19, 2),
+(19, 3),
+(20, 2),
+(21, 2),
+(21, 4);
 
 -- --------------------------------------------------------
 
@@ -201,7 +223,9 @@ INSERT INTO `joue` (`fkVideo`, `fkActeur`, `role`) VALUES
 (11, 34, 'Marcus'),
 (12, 35, 'Mason'),
 (12, 36, 'Jan'),
-(12, 37, 'Dana');
+(12, 37, 'Dana'),
+(13, 38, 'Barry allen'),
+(14, 39, 'Arrow');
 
 -- --------------------------------------------------------
 
@@ -329,7 +353,16 @@ INSERT INTO `produit` (`fkVideo`, `fkProducteur`) VALUES
 (9, 1),
 (10, 7),
 (11, 7),
-(12, 2);
+(12, 2),
+(13, 4),
+(14, 4),
+(15, 3),
+(16, 1),
+(17, 2),
+(18, 2),
+(19, 2),
+(20, 3),
+(21, 7);
 
 -- --------------------------------------------------------
 
@@ -341,22 +374,29 @@ CREATE TABLE `realisateur` (
   `idRealisateur` int(11) NOT NULL,
   `nom` varchar(255) DEFAULT NULL,
   `prenom` varchar(255) DEFAULT NULL,
-  `dateNaissance` date DEFAULT NULL
+  `dateNaissance` date DEFAULT NULL,
+  `dateMort` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `realisateur`
 --
 
-INSERT INTO `realisateur` (`idRealisateur`, `nom`, `prenom`, `dateNaissance`) VALUES
-(1, 'COLLET-SERRA', 'Jaume', '1974-03-23'),
-(2, 'JACKSON', 'Peter', '1961-10-31'),
-(3, 'SAMMUEL MARSHALL', 'Raimi', '1959-10-23'),
-(4, 'DEL TORO', 'Guillermo', '1964-10-09'),
-(5, 'KASDAN', 'Jake', '1974-10-28'),
-(6, 'GAZTELU-URRUTIA', 'Galder', '1974-01-30'),
-(7, 'KRASINSKI', 'John', '1979-10-20'),
-(8, 'RITCHIE', 'Guy', '1968-09-10');
+INSERT INTO `realisateur` (`idRealisateur`, `nom`, `prenom`, `dateNaissance`, `dateMort`) VALUES
+(1, 'COLLET-SERRA', 'Jaume', '1974-03-23', NULL),
+(2, 'JACKSON', 'Peter', '1961-10-31', NULL),
+(3, 'SAMMUEL MARSHALL', 'Raimi', '1959-10-23', NULL),
+(4, 'DEL TORO', 'Guillermo', '1964-10-09', NULL),
+(5, 'KASDAN', 'Jake', '1974-10-28', NULL),
+(6, 'GAZTELU-URRUTIA', 'Galder', '1974-01-30', NULL),
+(7, 'KRASINSKI', 'John', '1979-10-20', NULL),
+(8, 'RITCHIE', 'Guy', '1968-09-10', NULL),
+(9, 'MUSCHIETTI', 'Andrès', '1973-08-26', NULL),
+(10, 'NUTTER', 'David', '1960-07-21', NULL),
+(11, 'BODIN', 'Samuel', '1980-08-29', NULL),
+(12, 'KLEVBERG', 'Lars', '1980-05-01', NULL),
+(13, 'MYLOD', 'Mark', '1965-01-21', NULL),
+(14, 'PHILIPS', 'Robert', '1975-03-01', NULL);
 
 -- --------------------------------------------------------
 
@@ -385,7 +425,16 @@ INSERT INTO `realise` (`fkVideo`, `fkRealisateur`) VALUES
 (9, 6),
 (10, 7),
 (11, 7),
-(12, 8);
+(12, 8),
+(13, 9),
+(14, 10),
+(15, 11),
+(16, 12),
+(17, 13),
+(18, 13),
+(19, 13),
+(20, 10),
+(21, 14);
 
 -- --------------------------------------------------------
 
@@ -460,10 +509,15 @@ CREATE TABLE `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`mail`, `identifiant`, `mdp`, `dateNaissance`, `genre`) VALUES
-('a@a.a', 'aa', '961b6dd3ede3cb8ecbaacbd68de040cd78eb2ed5889130cceb4c49268ea4d506', '2000-01-01', 'Homme'),
-('b@b.b', 'bb', '3b64db95cb55c763391c707108489ae18b4112d783300de38e033b4c98c3deaf', '2002-02-02', 'Homme'),
-('c@c.c', 'cc', '355b1bbfc96725cdce8f4a2708fda310a80e6d13315aec4e5eed2a75fe8032ce', '2003-03-03', 'Homme'),
-('z@z.z', 'zz', '4a60bf7d4bc1e485744cf7e8d0860524752fca1ce42331be7c439fd23043f151', '2005-01-01', 'Homme');
+('a@a.a', 'a@a.a', '961b6dd3ede3cb8ecbaacbd68de040cd78eb2ed5889130cceb4c49268ea4d506', '2001-01-01', 'Homme'),
+('b@b.b', 'b', '3b64db95cb55c763391c707108489ae18b4112d783300de38e033b4c98c3deaf', '2000-10-01', 'Homme'),
+('c@c.c', 'c', '2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6', '2000-01-01', 'Homme'),
+('i@i.i', 'ii', '5d7f49449ab22deac22d767b89549c554134c8e47de4d38e748049875c83503b', '2001-01-01', 'Homme'),
+('k@k.k', 'kk', 'ad370ed99b189921e7fe26057c40aab9f4fee8385e47606f50f348b9a5530af0', '2001-01-01', 'Homme'),
+('p@p.p', 'pp', 'd53315bea08cec50d2591fcaf3b32dc5d289cdc6c16b7e8bed8c8e3f7ceaa34e', '2000-01-01', 'Homme'),
+('t@t.t', 't', 'e3b98a4da31a127d4bde6e43033f66ba274cab0eb7eb1c70ec41402bf6273dd8', '2000-10-01', 'Homme'),
+('y@y.y', 'yy', 'ef90d9c1ec76b1edc9edfaf2c0c05359c10ccc49ae8ecf7b7fd25ce9c02e86a4', '2000-01-01', 'Homme'),
+('z@z.z', 'z', '4a60bf7d4bc1e485744cf7e8d0860524752fca1ce42331be7c439fd23043f151', '2000-01-01', 'Homme');
 
 -- --------------------------------------------------------
 
@@ -477,26 +531,36 @@ CREATE TABLE `video` (
   `fkType` int(11) DEFAULT NULL,
   `dateSortie` date DEFAULT NULL,
   `duree` varchar(100) DEFAULT NULL,
-  `image` varchar(100) DEFAULT NULL
+  `image` varchar(100) DEFAULT NULL,
+  `resume` mediumtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `video`
 --
 
-INSERT INTO `video` (`idVideo`, `titre`, `fkType`, `dateSortie`, `duree`, `image`) VALUES
-(1, 'Black Adam', 1, '2022-10-19', '1h 25m', 'blackadam.jpg'),
-(2, 'Le Seigneur des anneaux', 1, '2001-12-19', '1h 78m', 'seigneur.jpg'),
-(3, 'Spider-man', 1, '2002-01-01', '2h 01m', 'spiderman.jpg'),
-(4, 'Spider-Man 2', 1, '2004-07-24', '2h 07m', 'spiderman2.jpg'),
-(5, 'King Kong', 1, '2005-01-01', '1h 87m', 'kingkong.jpg'),
-(6, 'Le Labyrinthe de Pan', 1, '2006-11-01', '1h 59m', 'labyrinthePan.jpg'),
-(7, 'Jumanji : Bienvenue dans la jungle', 1, '2017-12-20', '1h 59m', 'jumanji1.jpg'),
-(8, 'Jumanji: Next Level', 1, '2019-12-04', '2h 3m', 'jumanji2.jpg'),
-(9, 'La Plateform', 1, '2019-11-08', '1h 34m', 'laPlateform.jpg'),
-(10, 'Sans un bruit', 1, '2018-06-20', '1h 30m', 'sansBruit.jpg'),
-(11, 'Sans un bruit 2', 1, '2021-05-28', '1h 37m', 'sansBruit2.jpg'),
-(12, 'Un homme en colère', 1, '2021-05-07', '1h 58m', 'unHommeEnColere.jpg');
+INSERT INTO `video` (`idVideo`, `titre`, `fkType`, `dateSortie`, `duree`, `image`, `resume`) VALUES
+(1, 'Black Adam', 1, '2022-10-19', '1h 25m', 'blackadam.jpg', 'Teth Adam a reçu les pouvoirs tout-puissants des dieux. Après avoir utilisé ces pouvoirs pour se venger, il a été emprisonné, devenant Black Adam. Près de 5 000 ans se sont écoulés et Black Adam est passé de lhomme au mythe puis à la légende.'),
+(2, 'Le Seigneur des anneaux', 1, '2001-12-19', '1h 78m', 'seigneur.jpg', 'Les armées de Sauron ont attaqué Minas Tirith, la capitale du Gondor. Jamais ce royaume autrefois puissant na eu autant besoin de son roi.'),
+(3, 'Spider-man', 1, '2002-01-01', '2h 01m', 'spiderman.jpg', 'Peter Parker est élevé par sa tante May et son oncle Ben dans le quartier Queens de New York. Tout en poursuivant ses études à luniversité, il trouve un emploi de photographe au journal Daily Bugle.'),
+(4, 'Spider-Man 2', 1, '2004-07-24', '2h 07m', 'spiderman2.jpg', 'Ecartelé entre son identité secrète de Spider-Man et sa vie détudiant, Peter Parker na pas réussi à garder celle quil aime, Mary Jane, qui est aujourdhui comédienne et fréquente quelquun dautre.'),
+(5, 'King Kong', 1, '2005-01-01', '1h 87m', 'kingkong.jpg', 'Ann Darrow est une artiste de music-hall dont la carrière a été brisée net par la Dépression. Se retrouvant sans emploi ni ressources, la jeune femme rencontre laudacieux explorateur-réalisateur Carl Denham et se laisse entraîner dans la plus périlleuse des aventures.'),
+(6, 'Le Labyrinthe de Pan', 1, '2006-11-01', '1h 59m', 'labyrinthePan.jpg', 'Fin de la guerre. Carmen, récemment remariée, sinstalle avec sa fille Ofélia chez son nouvel époux, le très autoritaire Vidal, capitaine de larmée franquiste.'),
+(7, 'Jumanji : Bienvenue dans la jungle', 1, '2017-12-20', '1h 59m', 'jumanji1.jpg', 'Après avoir découvert une vieille console contenant un jeu vidéo dont ils navaient jamais entendu parler, quatre jeunes se retrouvent mystérieusement propulsés au coeur de la jungle de Jumanji, dans le corps de leurs avatars.'),
+(8, 'Jumanji: Next Level', 1, '2019-12-04', '2h 3m', 'jumanji2.jpg', 'Lorsque Spencer retourne dans le monde fantastique de Jumanji, ses amis Martha, Fridge et Bethany y retournent aussi pour le sauver, mais le jeu est maintenant brisé.'),
+(9, 'La Plateforme', 1, '2019-11-08', '1h 34m', 'laPlateform.jpg', 'Dans le futur, des prisonniers sont détenus dans des cellules verticales. Ceux qui logent dans les cellules supérieures sont nourris, tandis que ceux des cellules inférieures meurent de faim.'),
+(10, 'Sans un bruit', 1, '2018-06-20', '1h 30m', 'sansBruit.jpg', 'Dans le nord de lÉtat de New York, un couple et ses deux enfants doivent rester silencieux dans leur ferme isolée pour éviter des créatures mystérieuses qui utilisent le son pour chasser leurs proies.'),
+(11, 'Sans un bruit 2', 1, '2021-05-28', '1h 37m', 'sansBruit2.jpg', 'La famille Abbott doit maintenant faire face aux terreurs du monde extérieur alors quelle poursuit en silence son combat pour la survie.'),
+(12, 'Un homme en colère', 1, '2021-05-07', '1h 58m', 'unHommeEnColere.jpg', 'Alex, un Américain traversant une période difficile, se trouve un travail auprès dune entreprise londonienne de camions blindés, gagnant la confiance dune équipe de braquage dont les membres entretiennent une amitié serrée.'),
+(13, 'Flash', 2, '2023-05-24', '9 saisons', 'flash.jpg', 'À la suite dun accident de laboratoire au cours duquel il est frappé par la foudre, le chercheur Barry Allen, qui travaille pour le département de la police scientifique, découvre quil est capable de se déplacer à une vitesse supersonique.'),
+(14, 'Arrow', 2, '2020-01-28', '8 saisons', 'arrow.jpg', 'Disparu en mer avec son père et sa petite amie après un violent naufrage, le milliardaire et playboy Oliver Queen est retrouvé vivant cinq ans plus tard, complètement transformé.'),
+(15, 'Marianne', 2, '2019-09-13', '1 saisons', 'marianne.jpg', 'Emma, jeune romancière acerbe, découvre que les personnages monstrueux qui la hantaient et quelle a créés dans sa série de romans dépouvante sont réellement en train de prendre vie.'),
+(16, 'Chucky', 2, '2021-08-12', '3 saisons', 'chucky.jpg', 'À Hackensack, une paisible banlieue américaine, Jake Wheeler, un ado solitaire de 14 ans, fait la découverte dune poupée Chucky lors dune vente de garage.'),
+(17, 'Game of Thrones', 2, '2011-05-19', '8 saisons', 'game.jpg', 'Neuf familles nobles rivalisent pour le contrôle du Trône de Fer dans les sept royaumes de Westeros. Pendant ce temps, des anciennes créatures mythiques oubliées reviennent pour faire des ravages.'),
+(18, 'Prison Break', 2, '2005-08-29', '5 saisons', 'prison.jpg', 'Son frère injustement accusé de meurtre, un ingénieur en génie civil décide de le faire évader de prison.'),
+(19, 'Stranger Things', 2, '2016-07-15', '4 saisons', 'stranger.jpg', 'En 1983, à Hawkins dans lIndiana, Will Byers disparaît de son domicile. Ses amis se lancent alors dans une recherche semée dembûches pour le retrouver. Pendant leur quête de réponses, les garçons rencontrent une étrange jeune fille en fuite.'),
+(20, 'Alerte Contagion', 2, '2016-09-28', '1 saisons', 'alerte.jpg', 'Une mystérieuse épidémie sabat sur Atlanta. Une vaste zone de quarantaine est alors décrétée, forçant ceux qui se trouvent à lintérieur à lutter pour leur survie pendant que les autorités sattèlent à trouver un remède.'),
+(21, 'Comment élever un super-héros', 2, '2022-02-01', '2 saisons', 'elever.jpg', 'Une mère se bat pour cacher les super-pouvoirs de son jeune fils afin de le protéger de lexploitation de personnes malveillantes, tout en enquêtant sur leurs origines et la mort de son mari.');
 
 --
 -- Index pour les tables déchargées
