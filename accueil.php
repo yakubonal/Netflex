@@ -54,7 +54,7 @@
 	<div class="questions">
 		<!-- Création de plusieurs boutons (questions) -->
 		<button class="question" onclick="toggleAnswer(1)">Comment puis-je m'abonner au service de streaming ?</button>
-		<div class="reponse" id="reponse1">Pour vous abonner, cliquez sur le bouton "S'abonner" en haut de la page
+		<div class="reponse" id="reponse1">Pour vous abonner, cliquez sur le bouton "Crée un compte" en haut de la page
 			d'accueil.Suivez ensuite les
 			étapes pour créer un compte</div>
 

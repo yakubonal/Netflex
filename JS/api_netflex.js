@@ -1,6 +1,6 @@
 function afficheDetail(e) {
   // ID du bouton sur lequel on clique
-  let id = e.currentTarget.myParam;
+  let id = e.currentTarget.id;
   let elem = document.getElementById(id);
   if (elem.nextElementSibling.style.display !== "block") {
     elem.nextElementSibling.style.display = "block";
@@ -153,22 +153,26 @@ function afficherFilms() {
         // On ajoute chaque films/séries à la page
         response.forEach(film => {
           document.getElementById("videos").innerHTML += `
-            <div class='lesimages'>
+            <div class='lesimages cadre plus'>
               <img class='image' id='image${film.idVideo}' src='./images/${film.image}'>
-              <a class='titre'><br>Titre : ${film.titre}<br>Date : ${film.dateSortie}<br>Durée : ${film.duree}<br>Réalisateur : ${film.nom} ${film.prenom}</a>
-              <img class='bouton' id='bouton${film.idVideo}' src='./images/bouton.jpg'>
-              <div class='detail'>
-                Réalisateur : ${film.nom}<br>${film.prenom}
+              <div class='plus'>
+                <a class='titre'><br>Titre : ${film.titre}<br>Date : ${film.dateSortie}<br>Durée : ${film.duree}<br>Réalisateur : ${film.nom} ${film.prenom}</a>
+                <div class='bouton'>
+                  <img class='bouton clicBouton' id='bouton${film.idVideo}' src='./images/bouton.jpg'>
+                  <div class='detail'>
+                    Résumé : ${film.nom}<br>${film.prenom}
+                  </div>
+                </div>
               </div>
             </div>
           `
         });
 
         // Ajout de listeners sur les boutons "Plus de détails"
-        let image = document.getElementsByClassName("bouton");
-        for (let i = 0; i < image.length; i++) {
-          image[i].addEventListener("click", afficheDetail);
-          image[i].myParam = image[i].id;
+        let boutonsDetails = document.getElementsByClassName("clicBouton");
+        for (let bouton of boutonsDetails) {
+          bouton.addEventListener("click", afficheDetail);
+          bouton.myParam = bouton.id;
         }
       }
     }
