@@ -160,11 +160,9 @@ header>ul>li>a {
 }
 
 .detail {
-    color: white;
+    color: rgb(255, 255, 255);
     display: none;
-    text-align: center;
-    padding: 10px;
-    margin-left: 100px;
+    width: 400px;
 }
 
 .image {
