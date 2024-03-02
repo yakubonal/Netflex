@@ -1,3 +1,4 @@
+// Fonction qui affiche ou masque les détails d'un élément
 function afficheDetail(e) {
   // ID du bouton sur lequel on clique
   let id = e.currentTarget.id;
@@ -181,4 +182,5 @@ function afficherFilms() {
   req.send();
 }
 
+// Affichage initial des genres
 afficherGenres();
