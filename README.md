@@ -14,15 +14,21 @@ Il s'agit d'un prototype simple permettant la navigation entre différentes page
 - Page d’accueil avec un foire au questions.
 - Affiche un message de bienvenue ou des recommandations de contenu.
 
+![alt text](/images/image.png)
+
 ### 🔐 Page d'inscription
 - Permet à un nouvel utilisateur de créer un compte.
 - Les informations sont enregistrées dans une base de données.
 - Validation des champs (email, mot de passe, etc.).
 
+![alt text](/images/image-1.png)
+
 ### 🔑 Page de connexion
 - Authentifie les utilisateurs existants.
 - Redirection vers la page d'accueil après une connexion réussie.
 - Gestion des erreurs de connexion.
+
+![alt text](/images/image-2.png)
 
 ### 🎥 Page des films et séries
 - Liste les films et les séries disponibles.
@@ -30,6 +36,8 @@ Il s'agit d'un prototype simple permettant la navigation entre différentes page
   - **Type** (Film ou Série)
   - **Genre** (Action, Comédie, Drame, etc.)
 - Affichage dynamique des contenus selon les filtres choisis.
+
+![alt text](/images/image-4.png)
 
 ---
 
@@ -53,6 +61,3 @@ Il s'agit d'un prototype simple permettant la navigation entre différentes page
 Ce projet est une base d'apprentissage. Il ne propose pas de fonctionnalités de streaming vidéo en direct, mais sert à construire une structure fonctionnelle typique d'un site de ce genre.
 
 ---
-
-[Voir la vidéo (MP4)](/images/netflex.mp4)
-
